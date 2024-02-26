@@ -78,10 +78,11 @@ func (r *Relatorio) PrintRelatorio(finished bool) {
 	}
 
 	tw := table.NewWriter()
-	tw.SetStyle(table.StyleLight)
+	tw.SetStyle(table.StyleColoredDark)
 	tw.Style().Options.SeparateRows = true
-	tw.Style().Options.SeparateColumns = false
+	tw.Style().Options.SeparateColumns = true
 	tw.Style().Options.DrawBorder = true
+
 	if finished {
 		tw.SetTitle(fmt.Sprintf("Relatório de testes do %s", APP_NAME))
 	} else {
